@@ -88,24 +88,25 @@ li {
 }
 
 .gaze-zones {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;;
+  grid-template-rows: 1fr 1fr;
 }
 
 .zone {
-
+  pointer-events: all;
 }
 
-.gaze-zones:has(.zone-tl:hover) ~ .eyes .pupil { transform: translate(-80%, -80%); }
-.gaze-zones:has(.zone-tr:hover) ~ .eyes .pupil { transform: translate(-20%, -80%); }
-.gaze-zones:has(.zone-bl:hover) ~ .eyes .pupil { transform: translate(-80%, -20%); }
-.gaze-zones:has(.zone-br:hover) ~ .eyes .pupil { transform: translate(-20%, -20%); }
+
+body:has(.zone-tl:hover) .pupil { transform: translate(-80%, -80%); }
+body:has(.zone-tr:hover) .pupil { transform: translate(-20%, -80%); }
+body:has(.zone-bl:hover) .pupil { transform: translate(-80%, -20%); }
+body:has(.zone-br:hover) .pupil { transform: translate(-20%, -20%); }
 
 #blue-button{
   background-color: #9FC5F8;
@@ -138,6 +139,7 @@ li:hover{
   border-color: black;
   border-radius: 16px;
   box-shadow: 8px 8px 0px 0px rgb(0 0 0 / 100%);
+  position: relative
 }
 
 @media (max-width: 960px) {
